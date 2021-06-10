@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2021_06_10_160359) do
     t.string "username"
     t.string "first_name"
     t.string "last_name"
-    t.integer "post_id"
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
