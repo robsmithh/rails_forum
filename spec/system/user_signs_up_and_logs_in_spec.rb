@@ -73,5 +73,4 @@ RSpec.describe "Sign up and log in", :type => :system do
     def and_i_am_told_i_signed_out_successfully
       expect(page).to have_text('Signed out successfully')
     end
-
 end
