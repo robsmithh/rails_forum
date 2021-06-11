@@ -32,9 +32,12 @@ gem 'devise'
 
 gem 'pry', '~> 0.13.1'
 
+gem 'rexml', '~> 3.2', '>= 3.2.4'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 5.0.0'
 end
 
 group :development do
