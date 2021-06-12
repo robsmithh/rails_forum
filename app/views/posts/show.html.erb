@@ -1,0 +1,16 @@
+<div class="card" style="width: 36rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @post.title %></h5>
+    <p class="card-text"><%= @post.post %></p>
+    <% if current_user %>
+      <% if @post.user_id == current_user.id %>
+        <a class="card-link"><%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary" %></a> |
+        <a class="card-link"><%= link_to "Delete post", post_path(@post),
+          method: :delete, data: { confirm: 'Confirm you would like to delete this post' }, class: "btn btn-primary" %></a> |
+        <a class="card-link"><%= link_to "Reply", root_path, class: "btn btn-primary" %></a>
+      <% else %>
+
+      <% end %>
+    <% end %>
+  </div>
+</div>

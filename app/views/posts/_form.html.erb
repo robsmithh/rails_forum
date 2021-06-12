@@ -1,0 +1,16 @@
+<div class="card mb-2">
+  <%= form_for @post do |f| %>
+    <div class="input-group mb-3">
+      <span class="input-group-text w-10" style="width: 150px;">Title</span>
+      <%= f.text_field :title, id: 'title', class: "form-control" %>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text w-10" style="width: 150px;">Post</span>
+      <%= f.text_field :post, id: 'post', class: "form-control" %>
+    </div>
+    <div class="mb-4">
+      <%= f.submit(@post.new_record? ? "Create post" : "Amend post", class: "btn btn-dark") %>
+      <%= link_to "Cancel", :back, class: "btn btn-dark" %>
+    </div>
+  <% end %>
+</div>
