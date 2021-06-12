@@ -25,6 +25,7 @@ class PostsController < ApplicationController
 
   def destroy
     Post.destroy(params[:id])
+    flash[:notice] = "Post successfully deleted"
     redirect_to posts_path
   end
 
@@ -35,6 +36,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(params.require(:post).permit(:title, :post))
+      flash[:notice] = "Post successfully updated"
       redirect_to post_path(@post)
     else
       render 'edit'
