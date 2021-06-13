@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+
   end
 
   def create
@@ -21,6 +22,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @replies = Reply.where(post_id: @post.id)
+    @reply = Reply.new
   end
 
   def destroy
