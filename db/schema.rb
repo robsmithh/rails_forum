@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_12_184030) do
+ActiveRecord::Schema.define(version: 2021_06_13_193916) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2021_06_12_184030) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "reply_of_reply", default: false
+    t.integer "ror_id"
   end
 
   create_table "users", force: :cascade do |t|
