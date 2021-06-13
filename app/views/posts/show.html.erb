@@ -21,8 +21,8 @@
       <p class="card-text"><%= r.comment %></p>
       <% if current_user %>
         <% if r.user_id == current_user.id %>
-          <a class="card-link"><%= link_to 'Edit', edit_reply_path(r), class: "btn btn-primary" %></a> |
-          <a class="card-link"><%= link_to "Delete post", reply_path(r),
+          <a class="card-link"><%= link_to 'Edit', edit_reply_path(r, :post_id => @post.id), class: "btn btn-primary" %></a> |
+          <a class="card-link"><%= link_to "Delete post", reply_path(r, :post_id => @post.id),
             method: :delete, data: { confirm: 'Confirm you would like to delete this reply' }, class: "btn btn-primary" %></a>
         <% else %>
 

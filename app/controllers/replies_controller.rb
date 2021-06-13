@@ -19,14 +19,25 @@ class RepliesController < ApplicationController
 
   def edit
     @reply = Reply.find(params[:id])
+    @post = Post.find(params[:post_id])
   end
 
   def update
     @reply = Reply.find(params[:id])
+    @post = Post.find(params[:post_id])
+    if @reply.update(params.require(:reply).permit(:comment))
+      flash[:notice] = "Reply successfully updated"
+      redirect_to post_path(@post)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-
+    @post = Post.find(params[:post_id])
+    Reply.destroy(params[:id])
+    flash[:notice] = "Post successfully deleted"
+    redirect_to post_path(@post)
   end
 
   def reply_to_reply
