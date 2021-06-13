@@ -98,8 +98,8 @@ RSpec.configure do |config|
     visit '/'
   end
 
-  def create_user_and_log_in(admin = false, email = "test_user@example.com")
-    user = User.create(email: email, username: 'testuser10', first_name: 'test', last_name: 'user',
+  def create_user_and_log_in(admin = false, email = "test_user@example.com", username = 'testuser')
+    user = User.create(email: email, username: username, first_name: 'test', last_name: 'user',
         password: "password", admin: admin)
     click_link 'Sign in'
     fill_in :email, with: email

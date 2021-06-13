@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "User eidts and deletes post", :type => :system do
+RSpec.describe "User edits and deletes post", :type => :system do
   it 'allows a user to edit and delete a post' do
     when_i_arrive_on_the_homepage
     create_user_and_log_in
