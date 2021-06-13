@@ -87,7 +87,7 @@ RSpec.describe 'create, edit and destroy reply' do
   end
 
   def then_i_am_taken_to_the_reply_edit_page
-    expect(page).to have_current_path(edit_reply_path(Reply.last))
+    expect(page).to have_current_path('/replies/1/edit?post_id=1')
   end
 
   def when_i_enter_valid_details
@@ -107,7 +107,7 @@ RSpec.describe 'create, edit and destroy reply' do
   end
 
   def when_i_select_delete_on_my_reply
-    click_link 'Delete reply'
+    click_link 'Delete'
   end
 
   def and_confirm_my_selection
