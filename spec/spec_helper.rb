@@ -94,6 +94,10 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 
+  def when_i_arrive_on_the_homepage
+    visit '/'
+  end
+
   def create_user_and_log_in(admin = false, email = "test_user@example.com")
     user = User.create(email: email, username: 'testuser10', first_name: 'test', last_name: 'user',
         password: "password", admin: admin)
@@ -101,6 +105,10 @@ RSpec.configure do |config|
     fill_in :email, with: email
     fill_in :password, with: "password"
     click_button 'Log in'
+  end
+
+  def sign_out_current_user
+    click_link 'Sign out'
   end
 
   def create_post
