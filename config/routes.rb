@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  resources :replies, except: [:show, :index]
+
   root to: 'pages#home'
 
 end

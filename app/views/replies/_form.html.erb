@@ -1,0 +1,13 @@
+<div class="card mb-2">
+  <%= form_for @reply do |f| %>
+    <div class="input-group mb-3">
+      <span class="input-group-text w-10" style="width: 150px;">Post</span>
+      <%= f.text_field :comment, id: 'comment', class: "form-control" %>
+    </div>
+    <div class="mb-4">
+      <%= hidden_field_tag :post_id, @post.id %>
+      <%= f.submit(@reply.new_record? ? "Create post" : "Amend post", class: "btn btn-dark") %>
+      <%= link_to "Cancel", :back, class: "btn btn-dark" %>
+    </div>
+  <% end %>
+</div>
