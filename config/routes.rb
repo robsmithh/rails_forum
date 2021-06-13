@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :replies, except: [:show, :index]
 
+  get '/recent_posts', to: 'posts#recent_posts'
+
   root to: 'pages#home'
 
 end

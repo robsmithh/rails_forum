@@ -46,4 +46,8 @@ class PostsController < ApplicationController
     end
   end
 
+  def recent_posts
+    @posts = Post.order(:created_at)
+  end
+
 end
